@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22년 1월 9일 JS 100제 문제풀이</title>
+</head>
+<body>
+    <script>
+        //Q34. sort 구현하기 
+        //키(tall)가 주워지면 순서대로 섰는지 확인하는 프로그램을 만들어보자. 
+        //(키는 공백으로 구분되어야 한다. )
+        //입력 : 176 156 155 165 166 169
+        //출력 : No
+        //입력 : 155 156 165 166 169 176
+        //출력 : Yes
+
+        // const unsorted = prompt("");
+        // let sorted = "";
+
+        // sorted = (unsorted.split(' ').sort( function(a,b){
+        //     return a - b;
+        // })).join(" ");
+
+        // if (unsorted === sorted) {
+        //     console.log("YES");
+        // }else {
+        //     console.log("NO");
+        // }
+
+//------------------------------------------------------------------------------------------------------------------
+
+
+        //Q35. Factory 함수 사용하기 
+        // 2제곱 3제곱 4제곱을 할 수 있는 Factory 함수를 만들어라.
+        // <pass>에 코드를 입력하여 two 함수를 완성하세요.
+            // function one(n) {
+            //     function two(x){
+            //         //pass
+            //         return Math.pow(x, n)
+            //     }
+            //     return two;
+            // }
+
+            // const a = one(2);
+            // const b = one(3);
+            // const c = one(4);
+
+            // console.log(a(10));
+            // console.log(b(10));
+            // console.log(c(10));
+
+//------------------------------------------------------------------------------------------------------------------
+
+        //Q36. 구구단 출력하기 
+        // 1 ~ 9까지의 숫자 중 하나를 입력하면 그 단의 구구단 결과를 한 줄에 출력하는 프로그램을 작성해라. 
+        // 입력 : 2 
+        // 출력 : 2 4 6 8 10 12 14 16 18
+        
+        // const num = prompt('1 ~ 9 까지 숫자를 넣어주세요.');
+        // let result = "";
+
+        // for(let i = 0; i < 9; i++){
+        //     result = result + (num * (i+1)) + ' '
+        // }
+
+        // console.log(result);
+
+//------------------------------------------------------------------------------------------------------------------
+
+        //Q37. 반장선거
+        // 학생들이 뽑은 후보들을 입력받으면 뽑힌 학생의 이름과 받은 표 수를 출력하는 프로그램을 만들어라. 
+        // 입력 : 원범 원범 혜원 혜원 혜원 혜원 
+        // 출력 : 혜원 (이)가 총 4표로 반장이 되었습니다. 
+
+        // const arr = ['원범', '원범', '원범','원범','원범','혜원', '혜원', '혜원', '혜원', '유진', '유진', '유진' ]
+        // let res = {};
+        // let winner = '';
+
+        // for(let index in arr){
+        //     let val = arr[index]
+        //     res[val] = res[val] === undefined ? 1 : res[val] = res[val] + 1;
+        // }
+
+        // //객체의 키값만 뽑아내는 매서드 , 
+        // //reduce함수는 배열의 매서드이고, 매개변수로 function을 하나 갖는다. 
+        // winner = Object.keys(res).reduce(function(a, b){
+        //     console.log(a,b);
+        //     return res[a] > res[b] ? a : b
+        // });
+
+        // console.log(winner);
+        // console.log(`${winner} 가 총 ${res[winner]}로 반장이 되었습니다. `)
+
+//------------------------------------------------------------------------------------------------------------------
+
+        //Q38. 호준이의 아르바이트 
+        // 1위 ~ 3위 학생은 여러명일 수도 있고 1~3위 학생중 중복되는 학생까지 포함하여 사탕을 사기로 한다.
+        // 학생들의 점수를 공백으로 구분하여 입력받고 사탕을 받을 학생의 수를 출력해라. 
+        // 입력 : 97 86 75 66 55 97 85 97 97 95
+        // 출력 : 6
+
+        // const score = ['97', '86', '86', '86', '75', '66', '55', '97', '85', '97', '97', '95'];
+        // score.sort(function(a,b){
+        //     return a - b;
+        // });
+
+        // console.log(score);
+
+        // let top3 = [];
+        // let count = 0;
+        
+        // while (top3.length < 4){
+        //     let value = score.pop();
+        //     if(!top3.includes(value)){
+        //         top3.push(value);
+        //     }
+        //     count++;
+        // }
+
+        // console.log(top3);
+        // console.log(count-1);
+
+//------------------------------------------------------------------------------------------------------------------
+
+        //Q39. 오타 수정하기 
+        // 문장이 입력되면 q를 e로 바꾸는 프로그램을 작성해봐라. 
+        // 입력 : querty
+        // 출력 : euerty
+        // 입력 : hqllo my naqm is hyqwon
+        // 출력 : hello mt name is hyewon
+
+        // const word = "hqllo my naqm is hyqwon";
+        // // split & join
+        // console.log(word.split("q").join('e'));
+
+//------------------------------------------------------------------------------------------------------------------
+
+        //Q40. 놀이동산에 가자
+        // 원범이와 친구들이 총 몇명이 탈 수 있는지 알 수 있는 프로그램을 작성해주세요. 
+        // 첫번째 입력으로 제한 무게가 주어지고, 두번째 입력으로 함께한 친구의 수 n이 주어진다.
+        // 그 다음 차례대로 탑승할 친구들의 몸무게가 주어진다. 몸무게는 무작위로 주어진다. 
+        // 입력 : 50 5 20 20 20 20 20
+        // 출력 : 2
+
+        // const weightLimit = prompt('무게 제한을 입력해주세요');
+        // const memberCount = prompt('몇명이 탈 계획인가요?');
+        // let count = 0;
+        // let totalWeight = 0;
+
+        // for (let i =0; i < memberCount; i++){
+        //     totalWeight = totalWeight + parseInt(prompt('몸무게를 입력해주세요'), 10);
+        //     if (totalWeight <= weightLimit){
+        //         count++; 
+        //     }
+        // }
+        // console.log(count)
+
+
+
+
+
+
+    </script>
+</body>
+</html>
