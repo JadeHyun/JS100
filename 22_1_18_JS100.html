@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22년 1월 18일 JS 100제 문제풀이 </title>
+</head>
+<body>
+    <script>
+        // Q41. 소수판별 
+
+        // 숫자가 주어지면 소수인지 아닌지 판별하는 프로그램을 만들어라 
+        // 소수가 맞으면 YES 아니면 NO 를 반환해라. 
+        // const prime = 1; 
+
+        function primeFunc (n) {
+            for (let i =2; i < n; i++){
+                if(n % i === 0){
+                    console.log("no")
+                    return false;
+                }
+            }
+            if (n === 1 ){
+            console.log('no');
+            return false;
+            }
+
+        console.log("yes");
+        } 
+        
+
+
+//-----------------------------------------------------------------------------------------------------------------
+        //Q42. 2020년 
+
+        // 2020년 1월1일은 수요일이다. 2020년 a월b일은 무슨 요일일까? 
+        // 두수 a,b를 입력받아 2020년 a월b일이 무슨 요일인지 리턴하는 함수 solution 을 완성하세요. 
+        // 요일의 이름은 sun, mon, tue, wed, thu, fri, sat 입니다. 
+        // 예를들어, a = 5 b = 24 라면 2020년 5월 24일은 일요일이므로 문자열 'sun' 을 반환하세요. 
+        // 제한조건. 
+        // 2020년은 윤년입니다. 
+        // 2020년 a월 b일은 실제로 있는 날입니다. 
+        // 13월 26일이나 2월 45일 같은 날짜는 주어지지 않습니다. 
+
+        const day = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+        const month = '1';
+        const date = '21'; 
+
+        function solution(a, b){
+            const theDay = new Date(`2022-${a}-${b}`);
+            console.log(day[ theDay.getDay()]);
+        }
+        
+        solution(month, date);
+
+//-----------------------------------------------------------------------------------------------------------------
+        //Q43. 10진수를 2진수로 
+
+        // 사용자에게 숫자를 입력받고 이를 2진수로 바꾸고 그 값을 출력해라. 
+
+        let dec = prompt('2진수로 바꿔줍니다.');
+        let arrBinary = [];
+        
+        while(dec) {
+           arrBinary.push(dec%2);
+           dec = Math.floor(dec/2)  ;
+        }
+
+
+        console.log(arrBinary.reverse().join(''));
+
+        let decc = 160;
+        console.log(decc.toString(2));
+
+        
+//-----------------------------------------------------------------------------------------------------------------
+        //Q44. 각 자리수의 합 
+        
+        // 사용자가 입력한 양의 정수의 각 자리수의 합을 구하는 프로그램을 만들어라 
+        // 예를들어 18234 = 1+8+2+3+4 이고 정답은 18이다. 
+        // 입력 : 18234 
+        // 출력 : 18
+        
+        let num = '1234';
+        let sum = 0;   // 값을 받는 변수
+
+        while (num) {
+           sum = sum + num%10;
+           num = Math.floor(num/10);
+        }
+
+        console.log(sum);
+
+//-----------------------------------------------------------------------------------------------------------------
+        //Q45. getTime() 함수 사용하기 
+
+        // Date객체의 메소드중 하나인 getTime()은 1970년 1월 1일 0시 0분 0초 이후로 부터 지금까지 흐른 시간을 천분의 1초 단위(ms)로 반환합니다. 
+        // 이를 이용하여 현재연도 (2019)를 출력해 보라. 
+
+        const theDate = new Date();
+        // console.log(theDate.getTime());
+        console.log(Math.floor(theDate.getTime() / (60*60*24*365*1000)) +1970) ; //31536000000
+
+//-----------------------------------------------------------------------------------------------------------------
+        //Q46. 각자리수의 합2 
+
+        // 1부터 20까지의(20포함) 모든 숫자를 일렬도 놓고 모든 자릿수의 총 합을 구해라. 
+        // 예를들면, 10 부터 15까지는 101112131415 이고 각 자리수의 합은 1+0+1+1+1+2+1+3+1+4+1+5 = 21 이다. 
+
+        let arr = [];
+        let total = 0;
+
+        for ( let i = 0; i < 20; i++){
+            arr[i] = i+1 ;
+        };
+
+        arr.forEach((n)=>{
+            while(n){
+                total = total + n%10;
+                n =Math.floor(n/10);
+            };
+        });
+
+        console.log(total);
+
+    </script>
+</body>
+</html>
