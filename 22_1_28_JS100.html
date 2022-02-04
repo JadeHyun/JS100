@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22년 1월 28일 JS 100제 문제풀이</title>
+</head>
+<body>
+    <script>
+        //Q47. set 자료형의 응용 
+        // 아래 주어진 데이터들로 부터 중복을 제거하여 실제 접수 인원을 출력해 주세요.
+        // const people = {
+        //     이호준 : "01050442903",
+        //     이호상 : "01051442904",
+        //     이준호 : "01050342904",
+        //     이호준 : "01050442903",
+        //     이준 : "01050412904",
+        //     이호 : "01050443904",
+        //     이호준: "01050442903"
+        // };
+
+        // let result = new Set();
+        // for(let key in people){
+        //     result.add(people[key]);
+        // };
+        // console.log(result.size);
+
+//------------------------------------------------------------------------
+        //Q48. 대소문자 바꿔서 출력하기
+        // 문자열이 주어지면 대문자와 소문자를 바꿔서 출력하는 프로그램을 만들어라.
+        // 입력 : AAABBBcccddd
+        // 출력 : aaabbbCCCDDD
+
+        // const str = "AAABBBcccddd";
+        // let arr = [];
+
+        // for(let i = 0; i <str.length; i++){
+        //     if(str[i]===str[i].toUpperCase()){
+        //         arr.push(str[i].toLowerCase());
+        //     }else{
+        //         arr.push(str[i].toUpperCase());
+        //     }
+        // }
+
+        // console.log(arr.join(""));
+
+//------------------------------------------------------------------------
+        //Q49. 최댓값 구하기
+        // 순서가 없는 10개의 숫자가 공백으로 구분되어 주어진다. 주어진 숫자들중 최대값을 반환해라.
+        // 입력 : 10 9 8 7 6 5 4 3 2 1 
+        // 출력 : 10
+
+        // let result = "10 9 8 7 6 5 4 3 2 1";
+        // result = result.split(" ").map((n)=>{
+        //     return parseInt(n, 10);
+        // });
+        // result.sort((a,b)=>{
+        //     return b - a;
+        // })
+
+        // console.log(result[0]);
+
+//------------------------------------------------------------------------
+        //Q50. 버블정렬 구하기
+        //버블정렬은 두 인접한 원소를 검사하여 정렬하는 방법을 말한다. 시간 복잡도는 느리지만 코드가 단순하기 때문에 자주 사용된다. 
+
+        function bubble(arr) {
+            let result = arr.slice(); 
+
+            for (let i = 0; i < result.length - 1; i++) {
+                for (let j = 0; j< result.length -i; j++) {
+                if (result[j] > result[j + 1]) {
+                    let value = result[j];
+                        result[j] = result[j+1]
+                        result[j+1] = value
+                }
+                }
+            }
+            return result;
+            }
+
+            const items = prompt('입력해주세요.').split(' ').map((n) => {
+            return parseInt(n, 10);
+            });
+
+            console.log(bubble(items))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
