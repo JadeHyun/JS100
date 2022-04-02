@@ -14,9 +14,10 @@
         let setVal = new Set(list);
         setVal.add(10); // set을 지원하는 매서드 중 add 는 끝에 인스턴스를 추가한다. 
         setVal.delete(1); // 변수 안에 인스턴스를 지운다. 
-        console.log( setVal.has(10)); // 변수 안에 해당 인스턴스가 있는지 유무를 true or flase 로 반환해 준다. 
+        // console.log( setVal.has(10)); 
+        // 변수 안에 해당 인스턴스가 있는지 유무를 true or flase 로 반환해 준다. 
 
-        console.log(setVal)
+        // console.log(setVal)
 
         //Q22. 배수확인 
         // => i 가 6의 배수인지 확인해 보려면 나머지 연산자를 사용하여 0 으로 떨어지면 될것같다. 
@@ -25,7 +26,7 @@
         // 만들어서 확인해 보자
         let i = Math.floor(Math.random()*10) ;
 
-        console.log(i)
+        // console.log(i)
         if( i/2 === 0){
             console.log('ture')
         }else{
@@ -49,10 +50,49 @@
         function circleWidth(n) {
             return n * n * 3.14;
         }
+        // console.log(circleWidth(5))
 
-        console.log(circleWidth(5))
+        //Q26. 행성문제2
+        // 행성의 한글이름이 입력되면 영어 이름이 반환되는 프로그램을 만들어라. 
+
+        const planets ={
+            수성 : 'Mercury',
+            금성 : 'Venus',
+            지구 : 'Earth',
+            화성 : 'Mars',
+            목성 : 'Jupiter',
+            토성 : 'Saturn',
+            천왕성 : 'Uranus',
+            해왕성 : 'Neptune'
+        };
+
+        // var planetsName = prompt();
+        // console.log(planets[planetsName]);
+        // console.log(planets.planetsName);
 
         
+        //Q27. 객체 만들기 
+        // 두 개를 합쳐 학생의 이름이 key 값이고, value 가 수학 점수인 객체를 출력해라. 
+
+        // const keys = prompt().split(' ');
+        // const values = prompt().split(' '); 
+
+        // let obj = {};
+
+        // for(let i =0; i < keys.length; i++){
+        //     obj[keys[i]] = values[i];
+        // }
+        // console.log(obj);
+        
+        //Q28. 2-gram
+        // 2-gram 은 문자열에서 2개의 연속된 요소를 출력하는 방법.
+
+        const words = "안녕하세요"
+
+        for(i=0; i < words.length-1; i++){
+            console.log(words[i], words[i+1]);
+        }
+
     </script>
 </body>
 </html>
