@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22년 4월 2일 JS 100제 문제풀이</title>
+</head>
+<body>
+    <script>
+        //Q21 set이란 ?
+        // => 중복되지 않은 데이터를 저장하는 데이터 구조이다. 
+        const list = [1,2,2,2,2,3,4,5,5,6,6,7,8,8,8,8];
+        let setVal = new Set(list);
+        setVal.add(10); // set을 지원하는 매서드 중 add 는 끝에 인스턴스를 추가한다. 
+        setVal.delete(1); // 변수 안에 인스턴스를 지운다. 
+        console.log( setVal.has(10)); // 변수 안에 해당 인스턴스가 있는지 유무를 true or flase 로 반환해 준다. 
+
+        console.log(setVal)
+
+        //Q22. 배수확인 
+        // => i 가 6의 배수인지 확인해 보려면 나머지 연산자를 사용하여 0 으로 떨어지면 될것같다. 
+        // i & 6 === 0 
+
+        // 만들어서 확인해 보자
+        let i = Math.floor(Math.random()*10) ;
+
+        console.log(i)
+        if( i/2 === 0){
+            console.log('ture')
+        }else{
+            console.log('false')
+        }
+
+        //Q23. ox 문제 
+        // => 너무 쉬워서 pass 
+
+        //Q24. 대문자로 바꿔주세요.
+        // 입력 : marry // 출력 : MARRY
+
+        let name = 'marry'
+
+        console.log(name.toUpperCase()); // toUpperCase 매서드는 문자열을 대문자로 반환하여 준다. 반대는 toLowerCase() 이다. 
+
+        //Q25. 원의 넓이 구하기 
+        // 입력으로 반지름의 길이 정수 n 이 주어지면 넓이를 반환하는 정수를 만들어라. 
+
+
+        function circleWidth(n) {
+            return n * n * 3.14;
+        }
+
+        console.log(circleWidth(5))
+
+        
+    </script>
+</body>
+</html>
